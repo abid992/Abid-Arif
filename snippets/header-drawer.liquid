@@ -19,6 +19,8 @@
     <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
+
+        {% if section.settings.show_mobile_menu %}
           <nav class="menu-drawer__navigation">
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
               {%- for link in section.settings.menu.links -%}
@@ -134,8 +136,33 @@
                 </li>
               {%- endfor -%}
             </ul>
-          </nav>
-          <div class="menu-drawer__utility-links">
+          </nav> 
+        {% endif %}
+
+          <div class="site_header__promo-container">
+
+          {% if section.settings.promo_message != blank %}
+            <div class="site-header__promo-message-mobile">
+              <p>{{ section.settings.promo_message }}</p>
+            </div>
+          {% endif %}
+
+            {%- if section.settings.primary_button_label != blank -%}
+              <a href="{{ section.settings.primary_button_url }}" class="u-btn">
+                <span class="u-btn-label">{{ section.settings.primary_button_label }}</span>
+                <span class="u-btn-arrow" aria-hidden="true">
+                <img
+                    src="{{ 'icon-arrow-right.svg' | asset_url }}"
+                    alt=""
+                    width="16"
+                    height="16"
+                  >
+                </span>
+              </a>
+            {%- endif -%}
+          </div>
+      
+          {% comment %} <div class="menu-drawer__utility-links">
             {%- if shop.customer_accounts_enabled -%}
               <a
                 href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
@@ -287,7 +314,7 @@
                 </li>
               {%- endif -%}
             </ul>
-          </div>
+          </div> {% endcomment %}
         </div>
       </div>
     </div>

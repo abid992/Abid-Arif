@@ -74,63 +74,9 @@
   }
 
   /* ── Button ── */
-  .hero__btn {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 28px;
+#shopify-section-{{ section.id }} .u-btn {
     background-color: {{ section.settings.primary_btn_bg }};
     color: {{ section.settings.primary_btn_color }};
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 400;
-    text-transform: uppercase;
-    padding: 10.5px 36px;
-    overflow: hidden;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  /* Button animation */
-  .hero__btn::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -130%;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.28) 50%, transparent 100%);
-    transform: skewX(-20deg);
-    transition: left 0.55s ease;
-    pointer-events: none;
-  }
-
-  .hero__btn:hover::after { left: 160%; }
-
-  .hero__btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.22);
-  }
-
-  .hero__btn:active {
-    transform: translateY(0);
-    box-shadow: none;
-  }
-
-  /* Arrow slides right on hover */
-  .hero__btn-arrow {
-    display: inline-flex;
-    align-items: center;
-    transition: transform 0.25s ease;
-  }
-
-  .hero__btn-arrow img {
-    display: block;
-    width: auto;
-    height: 14px;
-  }
-
-  .hero__btn:hover .hero__btn-arrow {
-    transform: translateX(5px);
   }
 
   /* ── Strip ── */
@@ -206,7 +152,7 @@
     }
 
     /* Button — centered over bottom of image */
-    .hero__btn--mobile {
+    .u-btn--mobile {
       position: absolute;
       bottom: 14%;
       left: 50%;
@@ -216,11 +162,11 @@
       padding: 9px 30px;
     }
 
-    .hero__btn--mobile:hover {
+    .u-btn--mobile:hover {
       transform: translateX(-50%) translateY(-2px);
     }
 
-    .hero__btn--mobile:active {
+    .u-btn--mobile:active {
       transform: translateX(-50%) translateY(0);
     }
 
@@ -263,10 +209,15 @@
     {%- endif -%}
 
     {%- if section.settings.primary_button_label != blank -%}
-      <a href="{{ section.settings.primary_button_url }}" class="hero__btn">
-        <span class="hero__btn-label">{{ section.settings.primary_button_label }}</span>
-        <span class="hero__btn-arrow" aria-hidden="true">
-          <img src="https://cdn.shopify.com/s/files/1/0800/6208/7409/files/Line_15.svg?v=1780143098" alt="" aria-hidden="true">
+      <a href="{{ section.settings.primary_button_url }}" class="u-btn">
+        <span class="u-btn-label">{{ section.settings.primary_button_label }}</span>
+        <span class="u-btn-arrow" aria-hidden="true">
+         <img
+            src="{{ 'icon-arrow-right-white.svg' | asset_url }}"
+            alt=""
+            width="16"
+            height="16"
+          >
         </span>
       </a>
     {%- endif -%}
@@ -310,9 +261,9 @@
       {%- endif -%}
 
       {%- if section.settings.primary_button_label != blank -%}
-        <a href="{{ section.settings.primary_button_url }}" class="hero__btn hero__btn--mobile">
-          <span class="hero__btn-label">{{ section.settings.primary_button_label }}</span>
-          <span class="hero__btn-arrow" aria-hidden="true">
+        <a href="{{ section.settings.primary_button_url }}" class="u-btn u-btn--mobile">
+          <span class="u-btn-label">{{ section.settings.primary_button_label }}</span>
+          <span class="u-btn-arrow" aria-hidden="true">
             <img src="https://cdn.shopify.com/s/files/1/0800/6208/7409/files/Line_15.svg?v=1780143098" alt="" aria-hidden="true">
           </span>
         </a>
