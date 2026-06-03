@@ -25,12 +25,66 @@
         "primary_btn_bg": "#000000",
         "primary_btn_color": "#ffffff",
         "ticker_text": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL",
-        "ticker_bg": "#F5F5F5",
+        "ticker_bg": "#f5f5f5",
         "ticker_color": "#000000"
+      }
+    },
+    "custom_product_grid_LKDUYQ": {
+      "type": "custom-product-grid",
+      "blocks": {
+        "product_card_E4eTKL": {
+          "type": "product_card",
+          "settings": {
+            "product": ""
+          }
+        },
+        "product_card_ytRf6e": {
+          "type": "product_card",
+          "settings": {
+            "product": ""
+          }
+        },
+        "product_card_L4hBPK": {
+          "type": "product_card",
+          "settings": {
+            "product": ""
+          }
+        },
+        "product_card_FqQaAb": {
+          "type": "product_card",
+          "settings": {
+            "product": ""
+          }
+        },
+        "product_card_jmTp9P": {
+          "type": "product_card",
+          "settings": {
+            "product": ""
+          }
+        },
+        "product_card_mBbiL8": {
+          "type": "product_card",
+          "settings": {
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_card_E4eTKL",
+        "product_card_ytRf6e",
+        "product_card_L4hBPK",
+        "product_card_FqQaAb",
+        "product_card_jmTp9P",
+        "product_card_mBbiL8"
+      ],
+      "name": "Custom Product Grid",
+      "settings": {
+        "heading": "Tisso vison in the wild"
       }
     }
   },
   "order": [
-    "hero_d7Lfrm"
+    "hero_d7Lfrm",
+    "custom_product_grid_LKDUYQ"
   ]
 }
