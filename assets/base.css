@@ -3629,6 +3629,7 @@ header.header.header--middle-left {
     text-decoration: none;
     font-size: 16px;
     font-weight: 400;
+    letter-spacing: 0;
     text-transform: uppercase;
     padding: 10.5px 36px;
     overflow: hidden;
