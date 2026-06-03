@@ -189,7 +189,7 @@
 
 .custom-product-grid__popup-img {
   width: 120px;
-  height: auto;
+  height: 160px;
   object-fit: cover;
   flex-shrink: 0;
   background: #f5f5f5;
@@ -205,6 +205,7 @@
 }
 
 .custom-product-grid__popup-price {
+  font-family: "Lustria", serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.2;
@@ -225,7 +226,6 @@
   display: block;
   font-size: 14px;
   line-height: 1.3;
-  text-transform: uppercase;
   letter-spacing: 0;
   margin-bottom: 8px;
   color: #333;
@@ -327,7 +327,7 @@
   letter-spacing: 0;
   text-transform: uppercase;
   cursor: pointer;
-  margin-top: 4px;
+  margin-top: 32px;
   overflow: hidden;
   transition: background .2s;
 }
@@ -429,7 +429,9 @@ cart-drawer.active:not(.is-empty) .drawer__inner-empty { display: none !importan
         role="listitem"
         {{ block.shopify_attributes }}
       >
-        {%- if block_image != blank -%}
+
+      <a href="{{ block_product.url }}">
+                {%- if block_image != blank -%}
           {%- assign bg_src = block_image | image_url: width: 800 -%}
         {%- elsif block_product != blank -%}
           {%- assign bg_src = block_product.featured_image | image_url: width: 800 -%}
@@ -453,6 +455,8 @@ cart-drawer.active:not(.is-empty) .drawer__inner-empty { display: none !importan
             </button>
           {%- endif -%}
         </div>
+      </a>
+
       </div>
     {%- endfor -%}
   </div>
@@ -935,6 +939,7 @@ cart-drawer.active:not(.is-empty) .drawer__inner-empty { display: none !importan
 
   SECTION_EL.addEventListener('click', (e) => {
     const btn = e.target.closest('.custom-product-grid__hotspot');
+    if (btn) { e.preventDefault();}
     if (btn?.dataset.productUrl) openPopup(btn.dataset.productUrl);
   });
 
